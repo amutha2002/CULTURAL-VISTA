@@ -60,9 +60,9 @@ button:hover {
 body {
     font-family: Arial, sans-serif;
     background-image: url('ihiimages.jpeg');
-	background-size: cover;
-	background-position: center;
-	position: center;
+    background-size: cover;
+    background-position: center;
+    position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,7 +113,7 @@ button {
     background-color: #050230;
     color: rgb(197, 143, 143);
     padding: 12px 20px;
-    border:color-mix(in srgb-linear, color percentage, color percentage);
+    border: color-mix(in srgb-linear, color percentage, color percentage);
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
@@ -124,3 +124,7 @@ button:hover {
     background-color: #040338;
 
 }
+
+
+
+/* logo profile */
