@@ -6,6 +6,8 @@ body {
 }
 
 .container {
+    background-image: url('ihiimages.png');
+    background-size: cover;
     width: 300px;
     margin: 100px auto;
     background-color: #fff;
@@ -72,7 +74,8 @@ body {
 
 /* Signup Container Styles */
 .signup-container {
-    background-color: white;
+    background-image: url('ihiimages.jpeg');
+    background-size: cover;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);

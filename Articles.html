@@ -1,87 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cultural Vista</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <script>
-      function openPDF(fruit) {
-          var pdfViewer = document.getElementById('pdfViewer');
-          var pdfUrl;
-          
-          switch (fruit) {
-              case 'apple':
-                  pdfUrl = 'https://github.com/amutha2002/final_year/raw/main/invoicesample.pdf';
-                  break;
-              case 'mango':
-                  pdfUrl = 'https://www.princexml.com/samples/invoice/invoicesample.pdf';
-                  break;
-              case 'orange':
-                  pdfUrl = 'https://github.com/amutha2002/final_year/raw/main/invoicesample.pdf';
-                  break;
-              default:
-                  pdfUrl = ''; // Default URL
-          }
 
-          pdfViewer.src = pdfUrl;
-      }
-  </script>
-    <header>
-      <nav>
-        <tr>
-          <div class ='logo'>
-            <a href="http://127.0.0.1:5500/main.html">
-            <img src="data-collection.png" alt="digital Preserving"> 
+<head>
+  <meta charset="UTF-8" />
+  <title>Cultural Vista</title>
+  <link rel="stylesheet" href="articles.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="community.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <tr>
+        <div class='logo'>
+          <a href="http://127.0.0.1:5500/main.html">
+            <img src="data-collection.png" alt="digital Preserving">
           </a>
-          </div>
-        </tr>  
-        <tr>
-          <div class="head">
-            <a href="http://127.0.0.1:5500/main.html">
-          <h4 href="#">CULTURAL VISTA  </h4>
-        </a>
-          </div>
-        </tr>        
-        <ul>
-          <li><a href="http://127.0.0.1:5500/main.html">Home</a></li>
-          <li><a href="#">Library</a></li>
-          <li><a href="http://127.0.0.1:5500/Articles.html">ARTICLE</a></li>
-          <li><a href="http://127.0.0.1:5500/community.html">Community</a></li>
-          <li><a href="http://127.0.0.1:5500/about.html">About</a></li>
-          <li><a href="http://127.0.0.1:5500/indexes.html">Sign up</a></li>
-          <li><a href="http://127.0.0.1:5500/index.html"> Log in</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-content">
-          
-          <p>
-            <ul>
-                <li><a href="#" onclick="openPDF('apple')">Apple</a></li>
-                <li><a href="#" onclick="openPDF('mango')">Mango</a></li>
-                <li><a href="#" onclick="openPDF('orange')">Orange</a></li>
-            </ul>
-            <embed id="pdfViewer" src="" type="application/pdf" width="250%" height="600px">
-          
-          </p>
-
         </div>
-    </main>
+      </tr>
+      <tr>
+        <div class="head">
+          <a href="http://127.0.0.1:5500/main.html">
+            <h4 href="#">CULTURAL VISTA </h4>
+          </a>
+        </div>
+      </tr>
+      <ul>
+        <li><a href="http://127.0.0.1:5500/main.html">Home</a></li>
 
-    <footer>
-      <p>&copy; Cultural Vista</p>
-    </footer>
-  </body>
+        <li><a href="http://127.0.0.1:5500/Articles.html">Articles</a></li>
+        <li><a href="http://127.0.0.1:5500/community.html">Community</a></li>
+        <li><a href="http://127.0.0.1:5500/about.html">About</a></li>
+        <li><a href="http://127.0.0.1:5500/indexes.html">Sign up</a></li>
+        <li><a href="http://127.0.0.1:5500/index.html"> Log in</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    <section>
+      <div class="article">
+        <h1>Article Title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit augue, eget posuere turpis
+          vulputate ac. Donec mattis ante nec ligula efficitur ultricies. Nullam ut fermentum nisi. Phasellus lacinia
+          fermentum augue, vel aliquet justo.</p>
+        <div class="edit">
+          <textarea id="editor" placeholder="Write your comment here..."></textarea>
+          <button onclick="saveComment()">Save</button>
+        </div>
+        <div class="comments">
+          <h2>Comments</h2>
+          <ul id="comment-list">
+            <!-- Comments will be displayed here dynamically -->
+          </ul>
+        </div>
+      </div>
+      <div class="article">
+        <h1>Article Title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit augue, eget posuere turpis
+          vulputate ac. Donec mattis ante nec ligula efficitur ultricies. Nullam ut fermentum nisi. Phasellus lacinia
+          fermentum augue, vel aliquet justo.</p>
+        <div class="edit">
+          <textarea id="editor" placeholder="Write your comment here..."></textarea>
+          <button onclick="saveComment()">Save</button>
+        </div>
+        <div class="comments">
+          <h2>Comments</h2>
+          <ul id="comment-list">
+            <!-- Comments will be displayed here dynamically -->
+          </ul>
+        </div>
+      </div>
+      <div class="article">
+        <h1>Article Title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit augue, eget posuere turpis
+          vulputate ac. Donec mattis ante nec ligula efficitur ultricies. Nullam ut fermentum nisi. Phasellus lacinia
+          fermentum augue, vel aliquet justo.</p>
+        <div class="edit">
+          <textarea id="editor" placeholder="Write your comment here..."></textarea>
+          <button onclick="saveComment()">Save</button>
+        </div>
+        <div class="comments">
+          <h2>Comments</h2>
+          <ul id="comment-list">
+            <!-- Comments will be displayed here dynamically -->
+          </ul>
+        </div>
+      </div>
+      <div class="article">
+        <h1>Article Title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit augue, eget posuere turpis
+          vulputate ac. Donec mattis ante nec ligula efficitur ultricies. Nullam ut fermentum nisi. Phasellus lacinia
+          fermentum augue, vel aliquet justo.</p>
+        <div class="edit">
+          <textarea id="editor" placeholder="Write your comment here..."></textarea>
+          <button onclick="saveComment()">Save</button>
+        </div>
+        <div class="comments">
+          <h2>Comments</h2>
+          <ul id="comment-list">
+            <!-- Comments will be displayed here dynamically -->
+          </ul>
+        </div>
+      </div>
+      <div class="article">
+        <h1>Article Title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit augue, eget posuere turpis
+          vulputate ac. Donec mattis ante nec ligula efficitur ultricies. Nullam ut fermentum nisi. Phasellus lacinia
+          fermentum augue, vel aliquet justo.</p>
+        <div class="edit">
+          <textarea id="editor" placeholder="Write your comment here..."></textarea>
+          <button onclick="saveComment()">Save</button>
+        </div>
+        <div class="comments">
+          <h2>Comments</h2>
+          <ul id="comment-list">
+            <!-- Comments will be displayed here dynamically -->
+          </ul>
+        </div>
+      </div>
+      <div class="article">
+        <h1>Article Title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit augue, eget posuere turpis
+          vulputate ac. Donec mattis ante nec ligula efficitur ultricies. Nullam ut fermentum nisi. Phasellus lacinia
+          fermentum augue, vel aliquet justo.</p>
+        <div class="edit">
+          <textarea id="editor" placeholder="Write your comment here..."></textarea>
+          <button onclick="saveComment()">Save</button>
+        </div>
+        <div class="comments">
+          <h2>Comments</h2>
+          <ul id="comment-list">
+            <!-- Comments will be displayed here dynamically -->
+          </ul>
+        </div>
+      </div>
+      <div class="article">
+        <h1>Article Title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum blandit augue, eget posuere turpis
+          vulputate ac. Donec mattis ante nec ligula efficitur ultricies. Nullam ut fermentum nisi. Phasellus lacinia
+          fermentum augue, vel aliquet justo.</p>
+        <div class="edit">
+          <textarea id="editor" placeholder="Write your comment here..."></textarea>
+          <button onclick="saveComment()">Save</button>
+        </div>
+        <div class="comments">
+          <h2>Comments</h2>
+          <ul id="comment-list">
+            <!-- Comments will be displayed here dynamically -->
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <footer>
+    <p>&copy; Cultural Vista</p>
+  </footer>
+</body>
+
 </html>
