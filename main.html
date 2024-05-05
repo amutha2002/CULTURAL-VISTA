@@ -6,11 +6,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cultural Vista</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="district.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 
 </head>
+<script>
+  // Function to fetch data from Wikipedia API
+  function fetchData() {
+    // Wikipedia API endpoint
+    const url = 'https://en.wikipedia.org/w/api.php';
+
+    // Parameters for the API request
+    const params = {
+      action: 'query',
+      list: 'search',
+      srsearch: 'Culture of Tamil Nadu', // Search query for cultural topics in Tamil Nadu
+      format: 'json',
+      origin: '*' // Allow cross-origin requests
+    };
+
+    // Construct URL with parameters
+    const apiUrl = new URL(url);
+    apiUrl.search = new URLSearchParams(params).toString();
+
+    // Fetch data from Wikipedia API
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        // Display search results
+        displayResults(data.query.search);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  }
+
+  // Function to display search results
+  function displayResults(results) {
+    const resultsContainer = document.getElementById('results');
+    resultsContainer.innerHTML = '';
+    // resultsContainer.target = '_blank';
+
+    // Loop through search results and create list items
+    results.forEach(result => {
+      // Create elements
+      const listItem = document.createElement('div');
+      const title = document.createElement('h2');
+      const snippet = document.createElement('p');
+      const readMoreLink = document.createElement('a');
+
+      // Set content and attributes
+      title.textContent = result.title;
+      snippet.textContent = result.snippet;
+      readMoreLink.textContent = 'Read more';
+      readMoreLink.href = `https://en.wikipedia.org/wiki/${result.title}`;
+      readMoreLink.target = '_blank';
+
+      // Append elements
+      listItem.appendChild(title);
+      listItem.appendChild(snippet);
+      listItem.appendChild(readMoreLink);
+
+      // Append the list item to the results container
+      resultsContainer.appendChild(listItem);
+
+      // Add click event listener to each link if you want to navigate programmatically
+      readMoreLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default action
+        // Navigate to the link's href
+        window.location.href = readMoreLink.href;
+      });
+    });
+  }
+
+  fetchData();
+
+  // Function to display search results
+</script>
 
 <body>
   <header>
@@ -52,8 +124,9 @@
           art, and crafts that define the vibrant culture of Tamil Nadu.
         </h5>
         </p>
-        <a href="https://indianculture.gov.in/forts-of-india" class="btn">Indian Culture</a>
-        <a href="https://www.tnarch.gov.in/" class="btn">Tamil Culture</a>
+        <!-- <script link="/home/amu/cultural_vista/app.js"></script> -->
+        <a onclick="fetchData()" class="btn">Indian Culture</a>
+        <a href="ditrict.html" class="btn">Tamil Culture</a>
 
         <div class="container">
           <div class="icon-row">
@@ -73,11 +146,7 @@
                 <img src="play-button.png" alt="videos" title="videos">
               </a>
             </div>
-            <div class="icon">
-              <a href="">
-                <img src="e-book.png" alt="e-book" title="e-book">
-              </a>
-            </div>
+
             <div class="icon">
               <a href="">
                 <img src="pongal.png" alt="festivals" title="festivals">
@@ -140,13 +209,14 @@
               </a>
             </div>
             <div class="icon">
-              <a href="">
+              <a href="map.html">
                 <img src="landmark.png" alt="mapping" title="mapping">
               </a>
             </div>
           </div>
         </div>
       </div>
+      <div id="results"></div>
   </main>
 
   <footer>

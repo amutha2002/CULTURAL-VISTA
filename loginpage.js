@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (username === 'amutha' && password === '1234') {
             message.textContent = 'Login successful!';
             message.style.color = 'green';
-            window.location.href = 'main.html'
+            window.location.href = 'main.html';
+            
         } else {
             message.textContent = 'Invalid username or password.';
             message.style.color = 'red';

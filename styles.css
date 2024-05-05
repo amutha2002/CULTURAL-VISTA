@@ -19,7 +19,7 @@ a {
 
 /* Header and navigation styles */
 header {
-  background-color: #1a0770;
+  background: linear-gradient(to right, #13011c, #3f046c, #1b0121);
   box-shadow: 0 2px 4px rgba(139, 216, 226, 0.1);
   padding: 1rem;
 }
@@ -169,15 +169,15 @@ nav ul li {
 }
 
 .icon {
-  background-color: rgb(7, 9, 122);
+  background-color: rgb(19, 2, 67);
   height: 2.5rem;
   /* 48px (icon size) */
   width: 3rem;
   /* 48px (icon size) */
   border-radius: 0.5rem;
   /* 8px (rounded-md) */
-  overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(114, 67, 201, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
+  box-shadow: 0 4px 6px -1px rgba(21, 2, 56, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   /* shadow-md */
 }
 
