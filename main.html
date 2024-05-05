@@ -35,29 +35,32 @@
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
-        // Display search results
-        displayResults(data.query.search);
+        // Pass the fetched data to a function that renders a new page
+        renderPage(data.query.search);
       })
       .catch(error => console.error('Error fetching data:', error));
   }
 
-  // Function to display search results
-  function displayResults(results) {
-    const resultsContainer = document.getElementById('results');
-    resultsContainer.innerHTML = '';
-    // resultsContainer.target = '_blank';
+  // Function to render a new page with fetched content
+  function renderPage(results) {
+    // Create a new HTML document
+    const newPage = document.createElement('html');
+    const head = document.createElement('head');
+    const body = document.createElement('body');
+    newPage.appendChild(head);
+    newPage.appendChild(body);
 
     // Loop through search results and create list items
     results.forEach(result => {
       // Create elements
       const listItem = document.createElement('div');
       const title = document.createElement('h2');
-      const snippet = document.createElement('p');
+      const snippet = document.createElement('div');
       const readMoreLink = document.createElement('a');
 
       // Set content and attributes
       title.textContent = result.title;
-      snippet.textContent = result.snippet;
+      snippet.innerHTML = result.snippet;
       readMoreLink.textContent = 'Read more';
       readMoreLink.href = `https://en.wikipedia.org/wiki/${result.title}`;
       readMoreLink.target = '_blank';
@@ -67,20 +70,17 @@
       listItem.appendChild(snippet);
       listItem.appendChild(readMoreLink);
 
-      // Append the list item to the results container
-      resultsContainer.appendChild(listItem);
-
-      // Add click event listener to each link if you want to navigate programmatically
-      readMoreLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent default action
-        // Navigate to the link's href
-        window.location.href = readMoreLink.href;
-      });
+      // Append the list item to the body of the new page
+      body.appendChild(listItem);
     });
+
+    // Open the newly created page in a new tab
+    const newWindow = window.open();
+    newWindow.document.write(newPage.outerHTML);
   }
 
   fetchData();
-
+  s
   // Function to display search results
 </script>
 
