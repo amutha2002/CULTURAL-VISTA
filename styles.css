@@ -19,8 +19,8 @@ a {
 
 /* Header and navigation styles */
 header {
-  background: linear-gradient(to right, #13011c, #3f046c, #1b0121);
-  box-shadow: 0 2px 4px rgba(139, 216, 226, 0.1);
+  background: linear-gradient(to right, #13011c, #3f046c, #2b024a, #1b0121);
+  box-shadow: 1.2px 4px rgba(0, 16, 18, 0.1);
   padding: 1rem;
 }
 
@@ -31,7 +31,7 @@ nav {
 }
 
 .logo {
-  color: rgb(3, 21, 100);
+  color: rgb(193, 202, 241);
   font-size: 32px;
   font-weight: 700;
   border-radius: 50%;
@@ -62,6 +62,24 @@ nav ul {
 nav ul li {
   color: aqua;
   margin-left: 1rem;
+}
+
+.Sign-up {
+  background-color: white;
+  border: solid white 1px;
+  border-radius: 18px;
+  color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.log-in {
+  background-color: white;
+  border: solid white 1px;
+  border-radius: 18px;
+  color: black;
+  padding-left: 14px;
+  padding-right: 14px;
 }
 
 /* Hero section styles */
@@ -95,7 +113,9 @@ nav ul li {
 
 .btn {
   display: inline-block;
-  background-color: #50054c;
+  background: linear-gradient(to right, #13011c, #3f046c, #2b024a, #1b0121);
+
+  /* background-color: #2a0336; */
   color: #fff;
   padding: 0.8rem 1.5rem;
   border-radius: 4px;
@@ -106,7 +126,7 @@ nav ul li {
   background-color: #280753;
 }
 
-ம்
+
 
 /* Content section styles */
 .content {
@@ -217,7 +237,7 @@ nav ul li {
 
 /* Footer styles */
 footer {
-  background-color: #0c0042;
+  background-color: #110120;
   color: #fff;
   text-align: center;
   padding: 1rem;

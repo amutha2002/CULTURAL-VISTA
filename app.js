@@ -1,9 +1,10 @@
+
 // // // Fetch cultural content data from the server
 
 // // fetch('/api/content')
 // //   .then(response => response.json())
 // //   .then(data => {
-// //     const contentList = document.getElementById('content-list');
+//     const contentList = document.getElementById('content-list');
 
 // //     // Create and append content elements to the content list
 // //     data.forEach(item => {

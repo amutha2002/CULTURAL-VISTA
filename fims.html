@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+    <title>Tamil Culture</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(to right, #ff6e7f, #bfe9ff) left bottom no-repeat;
+            background-size: 100% 3px;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: #0c0227;
+            margin-bottom: 30px;
+        }
+
+        #content {
+            background: linear-gradient(to right, #f66e38, #ecec71, #ec7843) left bottom no-repeat;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #content>div {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background: linear-gradient(to right, #58035e, #067bba) left bottom no-repeat;
+            background-size: 100% 3px;
+        }
+
+        h2 {
+            color: #270234;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #064384;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+
+<body>
+    <br>
+    <h1>Tamil Culture </h1>
+    <div id="content"></div>
+
+    <script>
+        // Function to fetch data from Wikipedia API
+        function fetchData() {
+            // Wikipedia API endpoint
+            const url = 'https://en.wikipedia.org/w/api.php';
+
+            // Parameters for the API request
+            const params = {
+                action: 'query',
+                list: 'search',
+                srsearch: 'Culture of Tamil Nadu', // Search query for cultural topics in Tamil Nadu
+                format: 'json',
+                origin: '*', // Allow cross-origin requests
+                srlimit: 10 // Limit the number of search results
+            };
+
+            // Construct URL with parameters
+            const apiUrl = new URL(url);
+            apiUrl.search = new URLSearchParams(params).toString();
+
+            // Fetch data from Wikipedia API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Pass the fetched data to a function that renders the content
+                    renderContent(data.query.search);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Function to render the content
+        function renderContent(results) {
+            const contentContainer = document.getElementById('content');
+            contentContainer.innerHTML = ''; // Clear previous content
+
+            // Loop through search results and create content elements
+            results.forEach(result => {
+                // Create elements
+                const listItem = document.createElement('div');
+                const title = document.createElement('h2');
+                const snippet = document.createElement('div');
+                const readMoreLink = document.createElement('a');
+
+                // Set content and attributes
+                title.textContent = result.title;
+                snippet.innerHTML = result.snippet;
+                readMoreLink.textContent = 'Read more';
+                readMoreLink.href = `https://en.wikipedia.org/wiki/${result.title}`;
+                readMoreLink.target = '_blank';
+
+                // Append elements
+                listItem.appendChild(title);
+                listItem.appendChild(snippet);
+                listItem.appendChild(readMoreLink);
+
+                // Append the list item to the content container
+                contentContainer.appendChild(listItem);
+            });
+        }
+
+        // Call the fetchData function when the page loads
+        window.onload = fetchData;
+    </script>
+    <footer>
+        <p>&copy; Cultural Vista</p>
+      </footer>
+</body>
+
+</html>
