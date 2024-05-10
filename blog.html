@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Options</title>
+    <style>
+        /* Add your CSS styles here */
+        .video-options {
+            margin-top: 20px;
+        }
+
+        .video-btn,
+        .subscribe-btn {
+            padding: 8px 16px;
+            margin-right: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-options">
+        <!-- Like button -->
+        <button class="video-btn like-btn">Like <span id="likeCount">0</span></button>
+        <!-- Comment button -->
+        <button class="video-btn comment-btn" onclick="showComments()">Comments</button>
+        <!-- Share button -->
+        <button class="video-btn share-btn">Share</button>
+        <!-- Subscribe button -->
+        <button class="subscribe-btn" onclick="subscribe()">Subscribe <span id="subscribeCount">0</span></button>
+    </div>
+
+    <div id="commentsSection" style="display: none;">
+        <h2>Comments</h2>
+        <textarea id="commentInput" placeholder="Add your comment"></textarea>
+        <button onclick="addComment()">Add Comment</button>
+        <div id="commentList"></div>
+    </div>
+
+    <script>
+        // Initialize like and subscribe counts
+        let likeCount = 0;
+        let subscribeCount = 0;
+
+        // Retrieve like count from localStorage if available
+        if (localStorage.getItem('likeCount')) {
+            likeCount = parseInt(localStorage.getItem('likeCount'));
+            document.getElementById('likeCount').innerText = likeCount;
+        }
+
+        // Retrieve subscribe count from localStorage if available
+        if (localStorage.getItem('subscribeCount')) {
+            subscribeCount = parseInt(localStorage.getItem('subscribeCount'));
+            document.getElementById('subscribeCount').innerText = subscribeCount;
+        }
+
+        // Function to increment like count
+        function like() {
+            likeCount++;
+            localStorage.setItem('likeCount', likeCount);
+            document.getElementById('likeCount').innerText = likeCount;
+        }
+
+        // Function to increment subscribe count
+        function subscribe() {
+            subscribeCount++;
+            localStorage.setItem('subscribeCount', subscribeCount);
+            document.getElementById('subscribeCount').innerText = subscribeCount;
+        }
+
+        // Function to show/hide comments section
+        function showComments() {
+            const commentsSection = document.getElementById('commentsSection');
+            commentsSection.style.display = commentsSection.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Function to add comment
+        function addComment() {
+            const commentInput = document.getElementById('commentInput').value;
+            if (commentInput.trim() !== '') {
+                const commentList = document.getElementById('commentList');
+                const comment = document.createElement('div');
+                comment.textContent = commentInput;
+                commentList.appendChild(comment);
+                document.getElementById('commentInput').value = '';
+            } else {
+                alert('Please enter a comment.');
+            }
+        }
+    </script>
+</body>
+
+</html>

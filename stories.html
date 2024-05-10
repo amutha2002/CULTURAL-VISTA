@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cultural Vista</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="img.css" />
+    <script src="vedio.js"></script>
+    <script src="blog.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <script>
+        // Initialize like and subscribe counts
+        let likeCount = 0;
+        let subscribeCount = 0;
+
+        // Retrieve like count from localStorage if available
+        if (localStorage.getItem('likeCount')) {
+            likeCount = parseInt(localStorage.getItem('likeCount'));
+            document.getElementById('likeCount').innerText = likeCount;
+        }
+
+        // Retrieve subscribe count from localStorage if available
+        if (localStorage.getItem('subscribeCount')) {
+            subscribeCount = parseInt(localStorage.getItem('subscribeCount'));
+            document.getElementById('subscribeCount').innerText = subscribeCount;
+        }
+
+        // Function to increment like count
+        function like() {
+            likeCount++;
+            localStorage.setItem('likeCount', likeCount);
+            document.getElementById('likeCount').innerText = likeCount;
+        }
+
+        // Function to increment subscribe count
+        function subscribe() {
+            subscribeCount++;
+            localStorage.setItem('subscribeCount', subscribeCount);
+            document.getElementById('subscribeCount').innerText = subscribeCount;
+        }
+
+        // Function to show/hide comments section
+        function showComments() {
+            const commentsSection = document.getElementById('commentsSection');
+            commentsSection.style.display = commentsSection.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Function to add comment
+        function addComment() {
+            const commentInput = document.getElementById('commentInput').value;
+            if (commentInput.trim() !== '') {
+                const commentList = document.getElementById('commentList');
+                const comment = document.createElement('div');
+                comment.textContent = commentInput;
+                commentList.appendChild(comment);
+                document.getElementById('commentInput').value = '';
+            } else {
+                alert('Please enter a comment.');
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <tr>
+                <div class='logo'>
+                    <a href="main.html">
+                        <img src="Asserts/data-collection.png" alt="digital Preserving">
+                    </a>
+                </div>
+            </tr>
+            <tr>
+                <div class="head">
+                    <a href="main.html">
+                        <h4 href="#">CULTURAL VISTA </h4>
+                    </a>
+                </div>
+            </tr>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="Articles.html">Articles</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about.html">About</a></li>
+                <!-- <li><a href="indexes.html">Sign up</a></li>
+                <li><a href="index.html">Log in</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <main><br>
+        <center>
+            <h1>Stories And Myths</h1><br><br>
+
+            <div class="video-container">
+
+            </div><br>
+
+            <div class="video-container">
+                <div class="video-box">
+                    <!-- Video player -->
+                    <h2>பூனை குறுக்கே போனால் அபசகுனமா: பூனையால் வரும் நல்ல சகுனங்கள் என்னென்ன தெரியுமா</h2><br>
+                    <img src="https://tamil.cdn.zeenews.com/tamil/sites/default/files/styles/zm_700x400/public/2020/11/18/175763-cat.jpg?itok=Dm2IwAB8"
+                        alt="Product 4" />
+                    <!-- Video description -->
+                    <p class="video-description">
+                        ஜோதிட சாஸ்திரத்தின் படி பூனை ராகுவின் வாகனமாகக் கருதப்படுகின்றது.
+                        தீபாவளி இரவு பூனை வீட்டிற்கு வருவது ஒரு நல்ல சகுனம் என்று பிரபலமாக நம்பப்படுகிறது.
+                        தந்திர மற்றும் மந்திர சாஸ்திரத்தில் பூனை ஒரு முக்கியமான உயிரினமாகக் கருதப்படுகிறது.
+                        <br>
+                    </p>
+
+                    <p>பூனை நம் பாதையில் குறுக்கே வந்தால், அது அபாசகுனமாகக் கருதப்படுகின்றது. இப்படி ஒரு நம்பிக்கை
+                        இருப்பதால், பலர் பூனையைக் கண்டால், சிறிது நேரம் நின்று, வேறு யாராவது அப்பாதையைக் கடந்து
+                        சென்றவுடன் தாங்கள் செல்கிறார்கள். ஆனால் உண்மை என்னவென்றால், எந்த சூழ்நிலையிலும் பூனை நம்
+                        பாதையில் குறுக்கே வந்தால், அது எந்த தீங்கையும் விளைவிப்பதில்லை. மேலும் பூனையால் பல நல்ல
+                        பலன்களும் ஏற்படுகின்றன.
+
+                        பூனை (Cat), நமது இடபுற பாதையை மறைத்து, வடபக்கமாகப் போவதுதான் பொதுவாக அபசகுனமாகப்
+                        பார்க்கப்படுகின்றது. மற்ற சந்தர்ப்பங்களில் பூனை குறுக்கே வருவது தீங்கானதாக கருதப்படுவதில்லை.
+                        பூனையின் ஆறாவது உணர்வு ஒரு நாயைப் போலவே இருக்கிறது என்று நம்பப்படுகிறது. எனவே எதிர்கால
+                        நிகழ்வுகளை அது முன்னதாகவே அறிந்துகொள்கிறது என்றும் கருதப்படுகின்றது.
+
+                        <br>
+                    </p>
+
+                    <br>
+
+
+                    <div class="video-options">
+                        <!-- Like button -->
+                        <button class="video-btn like-btn">Like</button>
+                        <!-- Comment button -->
+                        <button class="video-btn comment-btn">Comment</button>
+                        <!-- Share button -->
+                        <button class="video-btn share-btn">Share</button>
+                        <!-- Subscribe button -->
+                        <button class="subscribe-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div><br>
+            <div class="video-container">
+                <div class="video-box">
+                    <!-- Video player -->
+
+                    <img src="Asserts/palli2-1544073146.jpg" alt="Product 4" <p class="video-description">
+                    <!-- Video description -->
+                    <p class="video-description">
+
+                    </p>
+                    <h2>பல்லி</h2><br>
+                    <p>பல்லி ஒரு அதிர்ஷ்டத்தின் சின்னமாகவும் புனிதமான உயிரினமாகவும் கருதப்படுகிறது. இது நீங்கள் செல்லும்
+                        வழியில் கடந்து சென்றால் உங்களுக்கு நல்ல நேரம் வருகிறது என்கிறது. அதாவது உங்களுக்காக ஒரு
+                        முக்கியமான வேலை காத்திருக்கிறது என்றும் அதில் வெற்றி கிடைக்கும் என்றும் சொல்லப்படுகிறது.
+
+
+                    </p>
+                    <!-- Video options -->
+                    <div class="video-options">
+                        <!-- Like button -->
+                        <button class="video-btn like-btn">Like</button>
+                        <!-- Comment button -->
+                        <button class="video-btn comment-btn">Comment</button>
+                        <!-- Share button -->
+                        <button class="video-btn share-btn">Share</button>
+                        <!-- Subscribe button -->
+                        <button class="subscribe-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div><br>
+            <div class="video-container">
+                <div class="video-box">
+                    <!-- Video player -->
+
+                    <img src="Asserts/anthai3-1544073153.jpg" alt="Product 4" <p class="video-description">
+                    <!-- Video description -->
+                    <p class="video-description">
+
+                    </p>
+                    <h2>ஆந்தை
+
+                    </h2>
+                    <p>நீங்கள் வெளியே செல்லும் போது ஆந்தை உங்களை கடந்து சென்றாலோ அல்லது அதை நீங்கள் பார்த்தாலோ இயற்கை
+                        நம்மிடம் ஏதோ சொல்ல வருகிறது. ஆந்தை நமது அறிவை காட்டுகிறது. அதாவது உங்களுக்கு எதாவது குழப்பம்
+                        நேரப் போவதையும் உங்கள் முழு நம்பிக்கையோடு போக வேண்டிய காரியத்தை செய்ய வேண்டும் என்று இது
+                        காட்டுகிறது.
+
+                    </p><br>
+                    <!-- Video options -->
+                    <div class="video-options">
+                        <!-- Like button -->
+                        <button class="video-btn like-btn">Like</button>
+                        <!-- Comment button -->
+                        <button class="video-btn comment-btn">Comment</button>
+                        <!-- Share button -->
+                        <button class="video-btn share-btn">Share</button>
+                        <!-- Subscribe button -->
+                        <button class="subscribe-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div><br>
+            <div class="video-container">
+                <div class="video-box">
+                    <!-- Video player -->
+
+                    <img src="Asserts/kazhuku5-1544073173.webp" alt="Product 4" <p class="video-description">
+                    <!-- Video description -->
+                    <p class="video-description">
+
+                    </p>
+                    <h3> கழுகு </h3>
+                    <p>கழுகின் பெரிய கண்கள் நமக்கு ஆர்வத்தை தருகிறது. கழுகு நம் பாதையை கடக்கும் போது வாழ்க்கையை பற்றி
+                        அறிந்து கொள்ள மிகப் பெரிய பாடம் நமக்கு வரப் போகிறது என்பதை காட்டுகிறது.
+
+
+
+                    </p><br>
+                    <!-- Video options -->
+                    <div class="video-options">
+                        <!-- Like button -->
+                        <button class="video-btn like-btn">Like</button>
+                        <!-- Comment button -->
+                        <button class="video-btn comment-btn">Comment</button>
+                        <!-- Share button -->
+                        <button class="video-btn share-btn">Share</button>
+                        <!-- Subscribe button -->
+                        <button class="subscribe-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div><br>
+
+
+
+        </center>
+    </main>
+    <footer>
+        <p>&copy; Cultural Vista</p>
+    </footer>
+</body>
+
+</html>

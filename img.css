@@ -7,14 +7,12 @@
 
 /* Styling for the video box */
 .video-box {
-    border: 4px solid #007bff;
-    /* Blue border with gradient effect */
+    border: 6px solid transparent;
+    border-image: linear-gradient(to right, #11013b, #c20cc9, #bd8d08, #ec2704, #f2107d) 1;
     border-radius: 10px;
     padding: 40px;
     background-color: #f8f9fa;
-    /* Light background color */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    /* Shadow effect */
 }
 
 /* Styling for the video player */
@@ -69,6 +67,25 @@
     background-color: #0056b3;
 }
 
+
+s
+/* Add your CSS styles here */
+.video-options {
+    margin-top: 20px;
+}
+
+.video-btn,
+.subscribe-btn {
+    padding: 8px 16px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
 /* Custom styling for the video player */
 /* .video-container {
     max-width: 800px;
