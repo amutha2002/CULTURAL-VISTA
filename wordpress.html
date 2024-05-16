@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WordPress Blog Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="wordpress.css" />
+</head>
+
+<body>
+    <div class="blog-post">
+        <h1>Blog Post Title</h1><br><br>
+        <input type="text" placeholder="Enter post title" id="postTitle">
+        <div id="contentContainer">
+            <textarea placeholder="Enter post content" id="postContent"></textarea><br><br>
+        </div>
+        <center>
+            <button id="addContentBtn">Publish Post</button>
+        </center><br><br>
+        <div class="drop-zone">
+            <!-- Drop files here or -->
+            <span class="browse-btn">Browse</span><br><br>
+            <input type="file" class="file-input" multiple><br>
+        </div>
+        <div class="media-container"></div><br>
+        <center>
+            <div class="actions">
+                <!-- <button id="publishBtn">Publish Post</button><br><br> -->
+
+                <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+                <button class="like-btn"><i class="fas fa-heart"></i> Like</button>
+                <button class="comment-btn"><i class="fas fa-comment"></i> Comment</button>
+                <button class="contact-btn"><i class="fas fa-envelope"></i> Contact</button>
+
+        </center>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

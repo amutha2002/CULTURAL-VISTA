@@ -1,0 +1,13 @@
+button {
+    /* post button */
+    background: linear-gradient(to right, #2b92f3, #200b00);
+    color: #ffffff;
+    padding: 20px 40px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px 20px;
+    box-shadow: 10px 10px 30px rgb(214, 197, 101);
+    cursor: pointer;
+    align-self: flex-end;
+    justify-content: center;
+}

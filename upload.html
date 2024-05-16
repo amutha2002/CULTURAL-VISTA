@@ -1,15 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>File Upload</title>
+  <title>Post Media</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgb(0, 0, 0);
+      /* background: linear-gradient(to right, #ee5254, #fc9a9b, #f3aeb9, #9efff7, #6f3ff1); */
+      /* color: #05093d; */
+      color: rgb(214, 197, 101);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: rgba(66, 2, 75, 0.2);
+      padding: 30px;
+      border-radius: 100px 5px;
+      box-shadow: 10px 10px 50px rgb(214, 197, 101);
+      max-width: 500px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      margin-right: 20px;
+    }
+
+    .field-group {
+      width: 100%;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .field-label {
+      width: 100px;
+      font-weight: bold;
+      margin-right: 10px;
+      text-align: right;
+    }
+
+    input[type="file"] {
+      margin-bottom: 20px;
+      width: calc(100% - 110px);
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(to right, #0cdac8, #250335);
+      color: #fffefe;
+      padding: 5px;
+    }
+
+    input[type="file"]::file-selector-button {
+      background-color: #24033f;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 5px 10px;
+      margin-right: 10px;
+    }
+
+    input[type="file"]::file-selector-text {
+      color: #fffefe;
+    }
+
+    input[type="text"] {
+      width: calc(100% - 110px);
+      padding: 5px;
+      border: none;
+      border-radius: 20px;
+      background: linear-gradient(to right, #250335, #0cdac8);
+      color: white;
+      font-size: 17px;
+    }
+
+    button {
+      /* post button */
+      background: linear-gradient(to right, #2b92f3, #200b00);
+      color: #ffffff;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 20px 5px;
+      box-shadow: 0px 0px 30px rgb(214, 197, 101);
+      cursor: pointer;
+      transition: background 0.3s ease;
+      align-self: flex-end;
+      justify-content: center;
+
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Upload Image or Video</h1>
-  <form action="http://localhost:3000/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="file" accept="image/*, video/*">
-    <button type="submit">Upload</button>
-  </form>
+  <div class="container">
+
+
+
+    <div class="field-group">
+      <span class="field-label">Media:</span>
+      <input type="file" id="mediaInput" accept="video/*" placeholder="Upload Video">
+    </div>
+    <div class="field-group">
+      <span class="field-label">Description:</span>
+      <input type="text" id="descriptionInput" placeholder="Description">
+    </div>
+    <div class="field-group">
+      <span class="field-label">Place:</span>
+      <input type="text" id="placeInput" placeholder="Place">
+    </div>
+    <div class="field-group">
+      <span class="field-label">Date:</span>
+      <input type="text" id="dateInput" placeholder="Date">
+    </div>
+    <div class="field-group">
+      <span class="field-label">Purpose:</span>
+      <input type="text" id="purposeInput" placeholder="Purpose">
+    </div>
+
+    <div class="header">
+
+      <button onclick="postMedia()">Post</button>
+    </div>
+  </div>
+
+  <script>
+    function postMedia() {
+      const mediaInput = document.getElementById('mediaInput');
+      const descriptionInput = document.getElementById('descriptionInput');
+      const placeInput = document.getElementById('placeInput');
+      const dateInput = document.getElementById('dateInput');
+      const purposeInput = document.getElementById('purposeInput');
+
+      const file = mediaInput.files[0];
+      const description = descriptionInput.value;
+      const place = placeInput.value;
+      const date = dateInput.value;
+      const purpose = purposeInput.value;
+
+      // Here, you can add the code to upload the media file and the associated data to your server
+      // For example, you can use an AJAX request or the Fetch API to send the data
+
+      console.log('Media:', file);
+      console.log('Description:', description);
+      console.log('Place:', place);
+      console.log('Date:', date);
+      console.log('Purpose:', purpose);
+    }
+  </script>
 </body>
+
 </html>

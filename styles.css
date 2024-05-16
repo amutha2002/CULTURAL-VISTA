@@ -9,6 +9,7 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: #040114;
+  /* background-color: #680606; */
 
 }
 
@@ -22,6 +23,8 @@ header {
   background: linear-gradient(to right, #13011c, #3f046c, #2b024a, #1b0121);
   box-shadow: 1.2px 4px rgba(0, 16, 18, 0.1);
   padding: 1rem;
+  box-shadow: 10px 10px 50px rgb(32, 99, 201);
+
 }
 
 nav {
@@ -51,6 +54,7 @@ nav {
   font-size: 50px;
   font-weight: 100;
   border-radius: 10%;
+
 }
 
 
@@ -84,14 +88,15 @@ nav ul li {
 
 /* Hero section styles */
 .hero {
-  background-image: url('ihiimages.jpeg');
+  /* background-image: url('ihiimages.jpeg'); */
   background-size: cover;
+
   background-position: center;
   height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #050469;
+  color: #02023d;
   text-align: center;
 }
 
@@ -114,17 +119,21 @@ nav ul li {
 .btn {
   display: inline-block;
   background: linear-gradient(to right, #13011c, #3f046c, #2b024a, #1b0121);
+  box-shadow: 1px 20px 50px rgb(1, 2, 43);
 
   /* background-color: #2a0336; */
   color: #fff;
   padding: 0.8rem 1.5rem;
-  border-radius: 4px;
+  border-radius: 7px;
   transition: background-color 0.3s ease;
+  /* box-shadow: 10px 10px 50px rgb(120, 214, 101); */
+
 }
 
+/* 
 .btn:hover {
-  background-color: #280753;
-}
+  background-color: #530dad;
+} */
 
 
 
@@ -140,18 +149,19 @@ nav ul li {
   /* 40px (p-10) */
   margin-top: 4rem;
   /* 64px (mt-16) */
+  box-shadow: 10px 10px 50px rgb(5, 47, 82);
+  border-radius: 100px 5px;
 }
 
-.container {
+/* .container {
   display: flex;
   justify-content: center;
   padding: 2.5rem;
   /* 40px (p-10) */
-  margin-top: 4rem;
-  /* 64px (mt-16) */
-}
-
-.icon-row {
+/* margin-top: 4rem; */
+/* 64px (mt-16) */
+/* } */
+*/ .icon-row {
   display: flex;
   gap: 1rem;
   /* 16px (space-x-4) */
@@ -159,7 +169,7 @@ nav ul li {
 }
 
 .icon-head {
-  background-color: rgb(4, 18, 94);
+  background-color: rgb(6, 21, 105);
   /* color: #040114; */
   height: 2rem;
   /* 48px (icon size) */
@@ -168,7 +178,7 @@ nav ul li {
   border-radius: 0.5rem;
   /* 8px (rounded-md) */
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 10 4px 6px 1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   /* shadow-md */
   display: flex;
   justify-content: center;
@@ -197,7 +207,7 @@ nav ul li {
   border-radius: 0.5rem;
   /* 8px (rounded-md) */
   /* overflow: hidden; */
-  box-shadow: 0 4px 6px -1px rgba(21, 2, 56, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 50px rgb(54, 47, 3);
   /* shadow-md */
 }
 
