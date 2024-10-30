@@ -17,7 +17,7 @@ form.addEventListener('submit', (event) => {
     // Here, you can add your server-side code or API call to handle the sign-up process
     console.log('Signing up with:', { username, email, password });
     errorMessage.textContent = '';
-    alert('Sign up successful!');
+    alert('Sign up Successful!');
     window.location.href = 'main.html'
     form.reset();
 });
