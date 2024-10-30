@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const message = document.getElementById('message');
 
     if (!form || !message) {
-        console.error("Form or message element not found.");
+        console.error("Form or message element not found");
         return;
     }
 
