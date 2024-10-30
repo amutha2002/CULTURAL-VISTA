@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             postTitleInput.value = "";
             contentAreas.forEach((area) => (area.value = ""));
         } else {
-            alert("Please enter a post title and content.");
+            alert("Please enter a post title ,content.");
         }
     });
 
