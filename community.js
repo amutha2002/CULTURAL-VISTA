@@ -8,6 +8,6 @@ function saveComment() {
         commentList.appendChild(li);
         document.getElementById('editor').value = '';
     } else {
-        alert('Please enter a comment.');
+        alert('Please enter comment.');
     }
 }
